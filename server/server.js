@@ -49,6 +49,21 @@ app.get("/get_student/:id", (req, res) => {
     });
 });
 
+app.post('/edit_user/:id', (req, res)=>{
+        const id = req.params.id;
+        const sql = "UPDATE student_details SET `name`=?, `email`=?, `age`=?, `gender`=? WHERE id=?";
+        const values = [
+        req.body.name,
+        req.body.email,
+        req.body.age,
+        req.body.gender,
+        id
+    ]
+    db.query(sql,values, (err, result)=>{
+        if(err) return res.json({message: 'Something unexpected has occured' + err})
+        return res.json({success: "Student added successfully"});
+    });
+});
 
 app.listen(port, ()=>{
     console.log('listening')
