@@ -36,7 +36,7 @@ function Create() {
                 </div>
                 <div className="form-group my-3">
                     <label htmlFor='email'>Email</label>
-                    <input type='email' name='name' required onChange={(e)=> setValues({...values,email: e.target.value})}/>
+                    <input type='email' name='email' required onChange={(e)=> setValues({...values,email: e.target.value})}/>
                 </div>
                 <div className="form-group my-3">
                     <label htmlFor='gender'>Gender</label>
